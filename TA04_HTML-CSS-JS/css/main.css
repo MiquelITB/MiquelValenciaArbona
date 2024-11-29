@@ -1,0 +1,108 @@
+@font-face {
+    font-family:'Magenta';
+    src:url('../imagenes/Magenta.ttf') format('Magenta');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, img {
+    vertical-align: middle;
+    display: inline-block;
+}
+h1 {
+    font-family:'Magenta', 'Lora';
+    color: solid black;
+    background-color: rgba(138, 43, 226, 0.5);
+    padding: 5px;
+    border-radius: 15px;
+}
+
+img {
+    margin-left: 10px;
+}
+
+body {
+    text-align: center;
+    font-family: 'Lora', serif;
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 15px;
+}
+
+body.oscuro {
+    background-color: rgba(120, 120, 120, 0.5);
+}
+
+nav {
+    background-color: rgba(138, 43, 226, 0.5);
+    font-family: 'Lora', serif;
+    font-weight: normal;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+section {
+    background-color: rgba(138, 43, 226, 0.5);
+    font-family: 'Lora', serif;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+footer {
+    justify-content: center;
+    font-family: 'Lora', serif;
+    color: black;
+    align-items: flex-end;
+    margin-top:  20px;
+    background-color: rgba(138, 43, 226, 0.5);
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.container {
+    font-family: 'Lora', serif;
+    display: flex;
+    gap: 20px; 
+}
+
+.columna1 {
+    font-family: 'Lora', serif;
+    width: 25vh;
+    flex: 1;
+    padding-bottom: 5vh;
+}
+
+.columna2 {
+    font-family: 'Lora', serif;
+    flex: 5;
+    padding-bottom: 5vh;
+
+}
+
+.galeria .imagen {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+  
+.galeria .imagen:hover {
+    transform: scale(1.1);
+}
+  
+.galeria .imagen.ampliada {
+    width: 350px;
+}
+
+#cambiar_fondo {
+    font-family: 'Lora', serif;
+    background-color: rgba(120, 120, 120, 0.5);
+    color: black;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+#cambiar_fondo:hover {
+    font-family: 'Lora', serif;
+}
