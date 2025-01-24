@@ -1,6 +1,6 @@
 @font-face {
     font-family:'Magenta';
-    src:url('../imagenes/Magenta.ttf') format('Magenta');
+    src:url('./docs/imagenes/Magenta.ttf') format('Magenta');
     font-weight: normal;
     font-style: normal;
 }
