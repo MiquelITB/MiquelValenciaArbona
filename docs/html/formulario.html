@@ -14,25 +14,27 @@
             <h2>Formulario de contacto</h2>
 
             <nav> 
-                <a href="../../index.html">Home</a> / <a href="proyectos.html">Proyectos</a><br><a href="informaciónPersonal.html">Información Personal</a>
+                <a href="../../main.html">Home</a> <br><a href="informaciónPersonal.html">Información Personal</a>
             </nav>
 
-            <form action="/submit" method="POST">
+            <form action="enviar_correo.php" method="POST">
                 <label for="nombre">Nombre y apellidos:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Escribe aquí tu nombre" required><br><br>
-    
+                <input type="text" id="nombre" name="nombre" required><br><br>
+
                 <label for="empresa">Empresa:</label>
-                <input type="text" id="empresa" name="empresa" placeholder="Escribe aquí la empresa" required><br><br>
-    
+                <input type="text" id="empresa" name="empresa" required><br><br>
+
                 <label for="correo">Email:</label>
-                <input type="email" id="correo" name="correo" placeholder="Ejemplo@gmail.com" required><br><br>
+                <input type="email" id="correo" name="email" placeholder="Ejemplo@gmail.com" required><br><br>
 
                 <label for="consulta">Tema de consulta:</label><br>
-                <textarea id="consulta" name="consulta" rows="2" placeholder="Escribe aquí tu consulta"></textarea><br><br>
+                <textarea id="consulta" name="mensaje" rows="2"></textarea><br><br>
 
                 <label for="telefono">Teléfono:</label>
-                <input type="number" id="telefono" name="telefono" placeholder="Escribe aquí tu teléfono" required><br><br>
+                <input type="number" id="telefono" name="telefono" required><br><br>
 
+                <p>En caso de error, se pueden poner en contacto conmigo<br>via gmail: valenciam.sc@gmail.com</br>
+                <br>
                 <button type="submit">Enviar</button>
             </form>
         </div>

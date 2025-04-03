@@ -1,13 +1,15 @@
 body {
     text-align: center;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     height: 75vh;
-    margin: 50;
+    margin: 50px;
     border-radius: 15px;
-
-}
+    background-color: black;
+    color: white;
+    font-family: 'Lora', serif;
+    padding: 20px;
 
 .fondo {
     border: 1px;
@@ -19,20 +21,34 @@ body {
 nav {
     margin-bottom: 20px;
     border-radius: 15px;
+    background-color: rgba(138, 43, 226, 0.8);
+    padding: 10px;
 }
 
-input::placeholder {
-    background-color: gainsboro;
-    font-family: 'Courier New', Courier, monospace;
-    border-radius: 15px;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
 }
 
-textarea::placeholder {
-    background-color: gainsboro;
-    border-radius: 15px;
+nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+input::placeholder, textarea::placeholder {
+    padding: 5px;
 }
 
 button {
     font-family: 'Courier New', Courier, monospace;
     border-radius: 15px;
+    padding: 10px 20px;
+    background-color: rgba(120, 120, 120, 0.5);
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: rgba(120, 120, 120, 0.7); /* Oscurecemos el fondo al pasar el ratón */
 }

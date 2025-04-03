@@ -1,4 +1,4 @@
-const imagenes = document.querySelectorAll('.galeria .imagen');
+const imagenes = document.querySelectorAll('.imagen-pequena');
 
 imagenes.forEach(imagen => {
     imagen.addEventListener('click', () => {
