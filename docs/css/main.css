@@ -70,3 +70,18 @@ footer a, footer button {
     color: white;
 }
 
+@media (max-width: 768px) {
+  body {
+    padding: 2vw;
+  }
+  nav {
+    flex-direction: column;
+  }
+  section{
+    padding: 5vw;
+  }
+  .imagen-pequena.ampliada{
+    width: 80vw;
+  }
+}
+
