@@ -100,7 +100,7 @@ const PersonalInfo = () => {
                   <div>
                     <h4 className="text-xs font-bold uppercase text-primary mb-2 flex items-center gap-2"><Wrench className="w-3 h-3"/> Programación e IT</h4>
                     <div className="flex flex-wrap gap-2">
-                      {["Python", "Scripting", "Cyberseguridad", "JavaScript", "HTML/CSS/Json", "Admin de Sistemas", "Linux", "Windows", "Redes", "Diseño/Logistica Web", "C#"].map(s => (
+                      {["Python", "Scripting", "Cyberseguridad", "JavaScript", "HTML/CSS/Json", "PHP", "Admin de Sistemas", "Linux", "Windows", "Redes", "Diseño/Logistica Web", "C#"].map(s => (
                         <span key={s} className="px-2 py-1 text-[10px] rounded bg-primary/10 border border-primary/20 text-primary">{s}</span>
                       ))}
                     </div>
