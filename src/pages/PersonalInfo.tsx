@@ -122,7 +122,7 @@ const PersonalInfo = () => {
                     <h2 className="font-heading font-semibold text-xl mb-6 flex items-center gap-2"><Languages className="w-5 h-5 text-primary" /> Idiomas</h2>
                     <div className="space-y-4">
                       <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                        <span className="text-sm font-medium">Catalán / Valenciano</span>
+                        <span className="text-sm font-medium">Catalán</span>
                         <span className="text-[10px] font-bold text-primary uppercase bg-primary/10 px-2 py-0.5 rounded">Nativo</span>
                       </div>
                       <div className="flex justify-between items-center border-b border-white/5 pb-2">
