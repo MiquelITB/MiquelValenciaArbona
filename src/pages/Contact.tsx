@@ -5,7 +5,6 @@ import DarkVeil from "../components/DarkVeil";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import { toast } from "sonner";
-import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
@@ -15,43 +14,36 @@ const Contact = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      toast.error("Por favor, rellena todos los campos obligatorios.");
-      return;
-    }
-
     setSending(true);
 
-    // Configuración de EmailJS
-    const serviceId = "service_so80q9x"; 
-    const templateId = "template_t1e27iw";
-    const publicKey = "yG8mCgGfyb9mz25h2";
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnjbdyrq";
 
-    const templateParams = {
-      name: form.name,
-      email: form.email,
-      subject: form.subject || "Sin asunto",
-      message: form.message,
-    };
-
-    emailjs
-      .send(serviceId, templateId, templateParams, publicKey)
-      .then(
-        () => {
-          toast.success("¡Mensaje enviado! Te responderé pronto.");
-          setForm({ name: "", email: "", subject: "", message: "" });
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json"
         },
-        (error) => {
-          console.error("Error:", error);
-          toast.error("Hubo un error al enviar el mensaje. Inténtalo de nuevo.");
-        }
-      )
-      .finally(() => {
-        setSending(false);
+        body: new FormData(e.target as HTMLFormElement) 
       });
+
+      if (response.ok) {
+        toast.success("¡Mensaje enviado con éxito!");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      } else {
+        const data = await response.json();
+        console.error("Error de Formspree:", data);
+        toast.error("Formspree rechazó el envío. ¿Confirmaste el email?");
+      }
+    } catch (error) {
+      // Este es el error que te sale ahora
+      console.error("Error de red:", error);
+      toast.error("Error de conexión. Prueba a subirlo a GitHub para testearlo.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputClasses =
@@ -59,7 +51,6 @@ const Contact = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
-      {/* Fondo DarkVeil */}
       <div className="absolute inset-0 z-0">
         <DarkVeil
           baseColor="#000000"
@@ -103,6 +94,7 @@ const Contact = () => {
                   placeholder="Tu nombre"
                   className={inputClasses}
                   maxLength={100}
+                  required
                 />
               </div>
               <div>
@@ -117,6 +109,7 @@ const Contact = () => {
                   placeholder="tu@email.com"
                   className={inputClasses}
                   maxLength={255}
+                  required
                 />
               </div>
             </div>
@@ -148,6 +141,7 @@ const Contact = () => {
                 rows={5}
                 className={inputClasses + " resize-none"}
                 maxLength={1000}
+                required
               />
             </div>
 
