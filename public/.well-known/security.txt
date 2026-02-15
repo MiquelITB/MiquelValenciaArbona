@@ -1,0 +1,4 @@
+Contact: mailto:valenciam.sc@gmail.com
+Expires: 2026-12-31T23:59:59z
+Preferred-Languages: es, ca, en
+Canonical: https://miquelitb.github.io/MiquelValenciaArbona/.well-known/security.txt

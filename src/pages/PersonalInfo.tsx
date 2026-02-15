@@ -1,3 +1,4 @@
+import { useState } from "react";
 import AnimatedSection from "../components/AnimatedSection";
 import BlurText from "../components/BlurText";
 import Silk from "../components/Silk";
@@ -11,9 +12,14 @@ import miFoto from "/workspaces/MiquelValenciaArbona/public/imagenes/f2.png";
 const PersonalInfo = () => {
   const greenGlow = "34, 197, 94";
 
+  const handleEmailClick = () => {
+    const user = "valenciam.sc";
+    const domain = "gmail.com";
+    window.location.href = `mailto:${user}@${domain}`;
+  };
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
-      {/* Fondo de seda original con el color lila */}
       <div className="absolute inset-0 z-0 opacity-30">
         <Silk
           speed={3}
@@ -24,11 +30,9 @@ const PersonalInfo = () => {
         />
       </div>
 
-      {/* Contenedor MagicBento para el brillo global del ratón */}
       <MagicBento glowColor={greenGlow}>
         <div className="max-w-[var(--page-max-width)] mx-auto px-4 py-16 sm:py-24 relative z-10">
           
-          {/* Cabecera */}
           <div className="mb-12">
             <AnimatedSection>
               <h1 className="text-4xl sm:text-5xl font-heading font-bold mb-4">
@@ -39,7 +43,6 @@ const PersonalInfo = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <AnimatedSection delay={0.1}>
-                {/* EFECTO APLICADO AL PERFIL */}
                 <MagicCard className="rounded-xl h-full">
                   <div className="flex flex-col gap-3 p-6 border border-border/40 bg-card/40 backdrop-blur-md h-full">
                     <h2 className="text-primary font-bold uppercase tracking-wider text-xs mb-2">Perfil Profesional</h2>
@@ -56,15 +59,20 @@ const PersonalInfo = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
                   <MagicCard className="rounded-xl">
                     <div className="p-4 border border-border/40 bg-card/40 backdrop-blur-md flex flex-col justify-center h-full">
-                      <div className="flex items-center gap-3 text-sm mb-2"><Mail className="w-4 h-4 text-primary" /> valenciam.sc@gmail.com</div>
+                      <div 
+                        onClick={handleEmailClick}
+                        className="flex items-center gap-3 text-sm mb-2 cursor-pointer hover:text-primary transition-colors"
+                      >
+                        <Mail className="w-4 h-4 text-primary" /> valenciam.sc@gmail.com
+                      </div>
                       <div className="flex items-center gap-3 text-sm mb-2"><Phone className="w-4 h-4 text-primary" /> 665 16 67 19</div>
-                      <div className="flex items-center gap-3 text-sm"><MapPin className="w-4 h-4 text-primary" /> Barcelona / Mallorca</div>
+                      <div className="flex items-center gap-3 text-sm mb-2"><MapPin className="w-4 h-4 text-primary" /> Barcelona / Mallorca</div>
                       <div className="flex items-center gap-3 text-sm mb-2"><Car className="w-4 h-4 text-primary" /> Carné de Coche: B</div>
                       <div className="flex items-center gap-3 text-sm text-primary font-medium italic">Disponibilidad inmediata</div>
                     </div>
                   </MagicCard>
 
-                   <div className="h-full">
+                  <div className="h-full">
                     <MagicCard className="rounded-xl h-full">
                       <div className="relative w-full h-full min-h-[160px] border border-border/40 bg-card/40 backdrop-blur-md flex items-center justify-center p-6">
                         <img 
@@ -82,7 +90,6 @@ const PersonalInfo = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            {/* COLUMNA IZQUIERDA */}
             <div className="lg:col-span-1 space-y-8">
               <AnimatedSection delay={0.3}>
                 <MagicCard className="rounded-xl">
@@ -109,14 +116,13 @@ const PersonalInfo = () => {
                 </MagicCard>
               </AnimatedSection>
 
-              {/* IDIOMAS */}
               <AnimatedSection delay={0.35}>
                 <MagicCard className="rounded-xl">
                   <div className="p-6 border border-border/40 bg-card/40 backdrop-blur-md">
                     <h2 className="font-heading font-semibold text-xl mb-6 flex items-center gap-2"><Languages className="w-5 h-5 text-primary" /> Idiomas</h2>
                     <div className="space-y-4">
                       <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                        <span className="text-sm font-medium">Catalán</span>
+                        <span className="text-sm font-medium">Catalán / Valenciano</span>
                         <span className="text-[10px] font-bold text-primary uppercase bg-primary/10 px-2 py-0.5 rounded">Nativo</span>
                       </div>
                       <div className="flex justify-between items-center border-b border-white/5 pb-2">
@@ -167,14 +173,12 @@ const PersonalInfo = () => {
               </AnimatedSection>
             </div>
 
-            {/* COLUMNA DERECHA */}
             <div className="lg:col-span-2 space-y-8">
               <AnimatedSection delay={0.5}>
                 <MagicCard className="rounded-xl h-full">
                   <div className="p-6 border border-border/40 bg-card/40 backdrop-blur-md">
                     <h2 className="font-heading font-semibold text-xl mb-8 flex items-center gap-2"><Briefcase className="w-5 h-5 text-primary" /> Experiencia Laboral</h2>
                     <div className="space-y-12">
-                      {/* Efiquality */}
                       <div className="relative">
                         <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                           <div>
@@ -204,7 +208,6 @@ const PersonalInfo = () => {
                         </div>
                       </div>
 
-                      {/* Oasiurba */}
                       <div className="relative">
                         <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                           <div>
@@ -232,7 +235,6 @@ const PersonalInfo = () => {
                         </div>
                       </div>
 
-                      {/* Prácticas */}
                       <div className="pt-8 border-t border-border/40">
                         <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                           <div>
