@@ -7,7 +7,7 @@ import {
   MapPin, GraduationCap, Wrench, Briefcase, Mail, 
   Phone, Car, Laptop, Palette, Layout as LayoutIcon, Languages 
 } from "lucide-react";
-import miFoto from "/workspaces/MiquelValenciaArbona/public/imagenes/f2.png";
+import miFoto from "../../public/imagenes/f2.png";
 
 const PersonalInfo = () => {
   const greenGlow = "34, 197, 94";
