@@ -22,12 +22,13 @@ const Contact = () => {
 
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Accept": "application/json"
-        },
-        body: new FormData(e.target as HTMLFormElement) 
-      });
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Accept": "application/json"
+      },
+      body: new FormData(e.target as HTMLFormElement)
+    });
 
       if (response.ok) {
         toast.success("¡Mensaje enviado con éxito!");
