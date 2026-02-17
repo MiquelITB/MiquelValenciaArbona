@@ -14,7 +14,7 @@ const projects = [
     link: "https://github.com/MiquelITB/Projecte-Transversal-ASIXc1B.git"
   },
   {
-    title: "Extragram en Docker",
+    title: "Extagram en Docker",
     description: "Desarrollo de una aplicación web llamada Extragram utilizando Docker. Extragram es una aplicación de microblogging que permite a los usuarios compartir fotos y mensajes cortos. Utilizamos Docker para crear un entorno de desarrollo y producción consistente, lo que facilita la implementación y el mantenimiento de la aplicación. La aplicación se compone de varios servicios, incluyendo una base de datos MariaDB, un servidor web Nginx y una aplicación PHP para manejar la lógica del negocio.",
     tags: ["Docker", "AWS", "HTML", "CSS", "PHP", "JavaScript", "MariaDB"],
     serveis: ["Bases de datos: MariaDB", "Web: Nginx y Apache2", "Docker Compose", "ProfHub"],
